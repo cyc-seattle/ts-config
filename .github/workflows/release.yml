@@ -6,10 +6,8 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
   id-token: write
-  actions: write
 
 jobs:
   release:
-    uses: cyc-seattle/.github/.github/workflows/release.yml@v1.0.0
+    uses: cyc-seattle/.github/.github/workflows/release.yml@v2.0.0

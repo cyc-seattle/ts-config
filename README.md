@@ -72,6 +72,13 @@ The `pre-commit` hook checks staged files with Prettier and ESLint. It never fix
 
 ## Release
 
-1. A PR that changes behavior adds a changeset. Run `pnpm changeset`.
-2. Merging to `main` opens or updates a "Version Packages" PR.
-3. Merging that PR publishes to npm over OIDC, with provenance.
+Every merge to `main` releases from the PR title. The title must be a conventional commit.
+
+| Title                                          | Release |
+| ---------------------------------------------- | ------- |
+| `fix:`                                         | Patch   |
+| `feat:`                                        | Minor   |
+| `!` after the type, or `BREAKING CHANGE`       | Major   |
+| `chore:`, `docs:`, `ci:`, `test:`, `refactor:` | None    |
+
+The release publishes to npm over OIDC, with provenance. Release notes are on the repo's GitHub releases.
