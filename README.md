@@ -3,7 +3,7 @@
 Shared ESLint, Prettier, TypeScript, Vitest, and lefthook config for cyc-seattle repos.
 
 ```sh
-pnpm add -D @cyc-seattle/ts-config eslint prettier typescript vitest
+pnpm add -D @cyc-seattle/ts-config "@types/node@^22" "eslint@^9.39" "prettier@^3.4" "typescript@~5.9" "vitest@^4.1"
 ```
 
 ## ESLint
@@ -14,7 +14,14 @@ pnpm add -D @cyc-seattle/ts-config eslint prettier typescript vitest
 export { default } from "@cyc-seattle/ts-config/eslint";
 ```
 
-The config uses Node globals. A browser package adds its own.
+The config uses Node globals. A browser package adds its own, with `pnpm add -D globals`:
+
+```js
+import config from "@cyc-seattle/ts-config/eslint";
+import globals from "globals";
+
+export default [...config, { languageOptions: { globals: globals.browser } }, { ignores: ["generated/**"] }];
+```
 
 ## Prettier
 
@@ -38,6 +45,18 @@ The config uses Node globals. A browser package adds its own.
 
 ```ts
 export { default } from "@cyc-seattle/ts-config/vitest";
+```
+
+To run tests in other folders, replace `include`. `mergeConfig` would append to the default list instead.
+
+```ts
+import config from "@cyc-seattle/ts-config/vitest";
+import { defineConfig } from "vitest/config";
+
+export default defineConfig({
+  ...config,
+  test: { ...config.test, include: ["packages/*/test/**/*.test.ts"] },
+});
 ```
 
 ## lefthook

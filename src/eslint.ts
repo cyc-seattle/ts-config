@@ -8,7 +8,7 @@ const config: Linter.Config[] = [
   { ignores: ["**/dist", "**/coverage", "**/node_modules", "pnpm-lock.yaml"] },
   { languageOptions: { globals: globals.node } },
   js.configs.recommended,
-  ...(tseslint.configs.recommended as Linter.Config[]),
+  ...tseslint.configs.recommended,
   { rules: { "@typescript-eslint/no-explicit-any": "warn" } },
   // Last, so it turns off every rule that conflicts with Prettier.
   prettier,

@@ -2,6 +2,7 @@
 pre-commit:
   jobs:
     - name: prettier
+      exclude: pnpm-lock.yaml
       run: pnpm exec prettier --check --ignore-unknown {staged_files}
     - name: eslint
       glob: "*.{js,jsx,mjs,cjs,ts,tsx,mts,cts}"

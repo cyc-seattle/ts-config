@@ -23,4 +23,10 @@ describe("eslint config", () => {
     const messages = await lint("export const   value  =  { a:1,b:2 }\n\n\n");
     expect(messages).toEqual([]);
   });
+
+  it("turns off recommended rules that conflict with Prettier", async () => {
+    const eslint = new ESLint({ cwd: process.cwd(), overrideConfigFile: true, overrideConfig: config });
+    const resolved = await eslint.calculateConfigForFile("example.ts");
+    expect(resolved?.rules?.["no-unexpected-multiline"]).toEqual([0]);
+  });
 });
