@@ -69,3 +69,9 @@ extends:
 ```
 
 The `pre-commit` hook checks staged files with Prettier and ESLint. It never fixes them. If a commit fails, run `mise run format`.
+
+## Release
+
+1. A PR that changes behavior adds a changeset. Run `pnpm changeset`.
+2. Merging to `main` opens or updates a "Version Packages" PR.
+3. Merging that PR publishes to npm over OIDC, with provenance.
