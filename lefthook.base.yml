@@ -1,0 +1,8 @@
+# Checks only. A fixing hook shares a stash across worktrees (lefthook #1587).
+pre-commit:
+  jobs:
+    - name: prettier
+      run: pnpm exec prettier --check --ignore-unknown {staged_files}
+    - name: eslint
+      glob: "*.{js,jsx,mjs,cjs,ts,tsx,mts,cts}"
+      run: pnpm exec eslint --no-warn-ignored {staged_files}
