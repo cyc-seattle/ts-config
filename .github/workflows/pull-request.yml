@@ -1,10 +1,13 @@
-name: Pull request
+name: pull-request
 
 on:
   pull_request:
   push:
     branches: [main]
   workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   ci:

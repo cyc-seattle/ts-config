@@ -1,7 +1,7 @@
 {
   "name": "@cyc-seattle/ts-config",
   "version": "0.1.0",
-  "description": "Shared ESLint, Prettier, TypeScript, Vitest, and lefthook config for CYC Seattle repos",
+  "description": "Shared ESLint, Prettier, TypeScript, Vitest, and lefthook config for cyc-seattle repos",
   "license": "Apache-2.0",
   "type": "module",
   "repository": {

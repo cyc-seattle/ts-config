@@ -1,6 +1,6 @@
 # @cyc-seattle/ts-config
 
-Shared ESLint, Prettier, TypeScript, Vitest, and lefthook config for CYC Seattle repos.
+Shared ESLint, Prettier, TypeScript, Vitest, and lefthook config for cyc-seattle repos.
 
 ```sh
 pnpm add -D @cyc-seattle/ts-config eslint prettier typescript vitest
