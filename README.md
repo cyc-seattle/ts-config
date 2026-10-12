@@ -72,11 +72,13 @@ The `pre-commit` hook checks staged files with Prettier and ESLint. It never fix
 
 ## Release
 
-Every merge to `main` publishes a patch version to npm over OIDC, with provenance. Release notes are on the repo's GitHub releases.
+Every merge to `main` releases from the PR title. The title must be a conventional commit.
 
-To publish a minor or major version:
+| Title                                          | Release |
+| ---------------------------------------------- | ------- |
+| `fix:`                                         | Patch   |
+| `feat:`                                        | Minor   |
+| `!` after the type, or `BREAKING CHANGE`       | Major   |
+| `chore:`, `docs:`, `ci:`, `test:`, `refactor:` | None    |
 
-1. Merge the change.
-2. In the repo's **Actions** tab, run the `release` workflow on `main`. Set **bump** to `minor` or `major`.
-
-Never start a commit subject with `feat:` or `fix:`. The release tool reads those prefixes as a version bump.
+The release publishes to npm over OIDC, with provenance. Release notes are on the repo's GitHub releases.
