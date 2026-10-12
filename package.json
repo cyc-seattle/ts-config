@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "description": "Shared ESLint, Prettier, TypeScript, Vitest, and lefthook config for cyc-seattle repos",
   "license": "Apache-2.0",
+  "homepage": "https://github.com/cyc-seattle/ts-config#readme",
+  "bugs": {
+    "url": "https://github.com/cyc-seattle/ts-config/issues"
+  },
   "type": "module",
   "repository": {
     "type": "git",
