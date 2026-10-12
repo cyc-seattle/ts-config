@@ -3,12 +3,20 @@ name: release
 on:
   push:
     branches: [main]
+  workflow_dispatch:
+    inputs:
+      bump:
+        description: The version part to bump
+        type: choice
+        options: [patch, minor, major]
+        default: patch
 
 permissions:
   contents: write
   id-token: write
-  pull-requests: read
 
 jobs:
   release:
     uses: cyc-seattle/.github/.github/workflows/release.yml@v2.0.0
+    with:
+      bump: ${{ inputs.bump }}
