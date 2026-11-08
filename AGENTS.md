@@ -2,6 +2,8 @@
 
 Guidance for coding agents working in this repository.
 
+Follow `cyc:conventions` (the rules shared by every cyc-seattle repo).
+
 ## Overview
 
 `@cyc-seattle/ts-config` is the shared ESLint, Prettier, TypeScript, Vitest, and lefthook config that every
